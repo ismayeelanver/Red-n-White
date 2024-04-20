@@ -1,5 +1,6 @@
 import pygame
 import random
+from pygame import mixer
 
 pygame.init()
 
@@ -8,7 +9,8 @@ width = 800
 screen = pygame.display.set_mode((width, height))
 
 title = pygame.display.set_caption("Red 'n White")
-icon = pygame.display.set_icon(pygame.image.load("icon.png"))
+sound = mixer.music.load("Red-n-White/loop.wav")
+mixer.music.play(-1)
 
 snake_speed = 1
 dot = pygame.Rect(400, 400, 40, 40)
@@ -59,3 +61,4 @@ while running:
             running = False
     pygame.display.update()
 pygame.quit()
+pygame.time.Clock().tick(60)
